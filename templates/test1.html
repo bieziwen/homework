@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品信息表</title>
+    <style type="text/css" rel="stylesheet">
+        img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>商品信息表</h1>
+<table border="1">
+    <tr>
+        <td><input type="checkbox"></td>
+        <th>ID</th>
+        <th>缩略图</th>
+        <th>产品名称</th>
+        <th>描述</th>
+        <th>单价</th>
+        <th>发布状态</th>
+        <th>操作</th>
+    </tr>
+
+    {% for good in goods %}
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>{{ good.id }}</td>
+            <td><img src="{{ good.img }}" alt=""></td>
+            <td>{{ good.goods_name}}</td>
+            <td>{{ good.details }}</td>
+            <td>{{ good.price }}</td>
+            <td>{{ good.state }}</td>
+            <td>{{ good.operation }}</td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+</html>

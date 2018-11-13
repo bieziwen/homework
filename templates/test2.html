@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>员工信息表</title>
+</head>
+<body>
+<h1>员工信息表</h1>
+<table border="1">
+    <tr>
+        <td><input type="checkbox"></td>
+        <th>ID</th>
+        <th>登录名</th>
+        <th>手机</th>
+        <th>邮箱</th>
+        <th>角色</th>
+        <th>加入时间</th>
+        <th>是否启用</th>
+        <th>操作</th>
+    </tr>
+
+    {% for emp in emps %}
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.empname }}</td>
+            <td>{{ emp.phone }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.job }}</td>
+            <td>{{ emp.join_time }}</td>
+            <td>{{ emp.state }}</td>
+            <td>{{ emp.operation }}</td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+</body>
+</html>
